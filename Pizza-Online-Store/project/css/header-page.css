@@ -1,0 +1,122 @@
+.header-page {
+  position: fixed; /*Фиксирует шапку*/
+  top: 0; /*Отступ сверху*/
+  left: 0; /*Отступ слева*/
+  width: 100%; /*Ширина*/
+  z-index: 5; /*Поолжение элемента на оси z*/
+  background: rgba(7, 52, 82, 0.95); /*Цвет шапки: красный, зеленый, синий, непрозрачность*/
+  padding: 9px 0; /*Оступ от содержимого до края*/
+  overflow: hidden; /*При переполнение объекта содержимое обрезать, без предоставления прокрутки*/
+}
+
+.header-page__container {
+  display: flex; /*Распологает контент по всей ширине*/
+  justify-content: space-between; /*Распологает контент по всей ширине*/
+  align-items: center; /*Выравниваем элементы по центру (по оси y)*/
+}
+
+.header-page__end {
+  display: flex; /*Распологает контент по всей ширине*/
+  align-items: center; /*Выравниваем элементы по центру (по оси y)*/
+}
+
+.header-page__nav {
+  margin-right: 15px; /*Отступ от блока до блока*/
+}
+
+.header-page__ul {
+  list-style-type: none;
+  display: flex; /*Распологает контент по всей ширине (т.е. в строчку, а не в столбик)*/
+  margin: 0; /*Отступ от блока до блока*/
+  padding: 0; /*Отступ от содержимого до края*/
+}
+
+.header-page__link {
+  color: white; /*Цвет текста у ссылок*/
+  text-decoration: none; /*Убираем нижнее подчеркивание*/
+  display: block; /*Каждый блок занимает всю ширину*/
+  padding: 15px 30px; /*Отступ от содержимого до края*/
+  font-family: 'Montserrat', sans-serif; /*Шрифт*/
+  font-size: 18px; /*Размер шрифта*/
+  font-weight: 900; /*Ширина букв (капс)*/
+  position: relative;
+  transition: padding 0.4s; /*Плавный переход (когда отводим курсор)*/
+}
+
+.header-page__link:hover {
+  /*Изменяет цвет при наведении*/
+  color: black; /*Цвет текста*/
+}
+
+.header-page__link::before {
+  /*Псевдо элемент отвечающий за изменение при навидении*/
+  content: '0';
+  position: absolute;
+  top: 50%; /*Отступ с веху на 50%*/
+  left: 0; /*Отступ слева*/
+  background: white; /*Цвет фона*/
+  width: 100%; /*Ширина*/
+  height: calc(100% + 110px); /*Высота*/
+  transform: translateY(-50%); /*Поднимает наш псевдо элемент на 50%*/
+  opacity: 0; /*Делает элемент полностью прозрачным*/
+  transition: all 0.2s; /*Плавный переход (когда наводим курсор)*/
+}
+
+.header-page__link:hover::before {
+  /*Навидение на псевдо элемент before*/
+  opacity: 1; /*При наведении на псевдо элемент before делает его не прозрачным*/
+}
+
+.header-page__text {
+  position: relative; /*Используется для того чтобы before не перекрывал текст*/
+  transition: color 0.2s;
+}
+
+.header-page__link:hover {
+  /*Изменяет цвет при наведении*/
+  color: black; /*Цвет текста*/
+}
+
+.header-page__hanburger {
+  display: none;
+  margin-right: -15px;
+}
+
+.header-page.is-active .header-page__link {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/*Медиа запрос для ширины экрана 1200px*/
+@media (max-width: 1200px) {
+  .header-page__link {
+    font-size: 16px; /*Изменения шрифта у ссылки*/
+    padding: 12px 15px; /*Изменение отступов*/
+  }
+  .header-page__phone {
+    font-size: 14px; /*Изменение размера шрифта у телефона*/
+    padding: 7px 16px; /*Изменение отступов*/
+  }
+}
+
+/*Медиа запрос для ширины экрана 992px*/
+@media (max-width: 992px) {
+  .header-page__nav {
+    display: none; /*Отключает раздел с навигацией*/
+  }
+
+  .header-page__hanburger {
+    display: block; /*Включает кнопку для меню*/
+  }
+
+  .header-page {
+    padding: 5px 0; /*Изменение отступов*/
+  }
+}
+
+/*Медиа запрос для ширины экрана 480px*/
+@media (max-width: 480px) {
+  .header-page__phone {
+    display: none; /*переходим на мобильную версию*/
+  }
+}

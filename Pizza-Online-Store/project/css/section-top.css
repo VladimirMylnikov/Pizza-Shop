@@ -1,0 +1,73 @@
+.section-top {
+  height: 100vh; /*Высота 100%*/
+  min-height: 600px; /*Минимальная высота 600 пикселей*/
+  background: #073452 url(../img/section-top/bg2.jpg) no-repeat center; /*Устанавливаем изображение и цвет для заднего фона*/
+  background-size: cover; /*Изображение занимает всю область видимости*/
+  color: white; /*Цвет текста*/
+  display: flex; /*Выравниваем содержимое по центру*/
+  justify-content: center; /*Выравниваем содержимое по центру*/
+  align-items: center; /*Выравниваем содержимое по центру*/
+  text-align: center; /*Выравниваем текст по центру*/
+  position: relative; /*Расположение*/
+  padding: 170px 0 100px; /*Отступ от содержимого до края*/
+}
+
+.section-top::before {
+  /*Пседо элемент добавляющий темный фильтр на изображение*/
+  content: '';
+  position: absolute; /*Расположение*/
+  top: 0; /*Отступ сверху*/
+  left: 0; /*Отступ слева*/
+  background: rgba(0, 0, 0, 0.4); /*Цвет фона с непрозрачностью*/
+  width: 100%; /*Ширина псевдо элемента*/
+  height: 100%; /*Высота псевдо элемента*/
+}
+
+.section-top__container {
+  position: relative; /*Расположение (распологает контейнер с текстом поверх псевдо элемента)*/
+}
+
+.container.section-top__container {
+  width: 500px;
+}
+
+.section-top__info {
+  /*Информация о доставке*/
+  font-size: 24px; /*Размер шрифта*/
+  font-family: 'Montserrat', sans-serif; /*Шрифт*/
+  font-weight: 900; /*Ширина букв (капс)*/
+  color: #fcff00; /*Цвет текста*/
+  margin: 0; /*Отступ от блока до блока*/
+}
+
+.section-top__title {
+  /*Слоган*/
+  font-family: 'Montserrat', sans-serif; /*Шрифт*/
+  font-size: 55px; /*Размер шрифта*/
+  font-weight: 900; /*Ширина букв (капс)*/
+  margin: 0 0 35px; /*Отступ от блока до блока*/
+}
+
+/*Медиа запрос для ширины экрана 992px*/
+@media (max-width: 992px) {
+  .section-top {
+    padding-top: 150px; /*Изменяем отступы*/
+  }
+}
+
+/*Медиа запрос для ширины экрана 576px*/
+@media (max-width: 576px) {
+  .section-top__info {
+    font-size: 18px; /*Изменяем шрифт у информации о доставки*/
+  }
+  .section-top__title {
+    font-size: 40px; /*Изменяем шрифт у слогана*/
+  }
+}
+
+/*Медиа запрос для ширины экрана 360px*/
+@media (max-width: 360px) {
+  .section-top__title {
+    font-size: 40px; /*Изменяем шрифт у слогана*/
+  }
+}

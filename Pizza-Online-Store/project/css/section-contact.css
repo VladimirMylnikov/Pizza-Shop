@@ -1,0 +1,131 @@
+.section-contacts__container {
+  position: relative;
+}
+
+/*Стиль для картинки (пиццы)*/
+.section-contacts__container::before {
+  content: '';
+  position: absolute;
+  background: url(../img/section-contact/food.png) no-repeat;
+  background-size: cover;
+  width: 350px;
+  height: 326px;
+  right: -40px;
+  bottom: -5px;
+}
+
+.section-contacts__title {
+  margin-bottom: 0;
+}
+
+.contacts {
+  display: flex;
+  align-items: center; /*Выравниваем содержимое по центру (относительно contacts__start)*/
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*Область в которой находится карта*/
+.contacts__start {
+  width: 50%; /*Ширина*/
+}
+
+/*Область в которой находится контактная информация*/
+.contacts__end {
+  width: 50%; /*Ширина*/
+  padding-left: 30px; /*Оступ от содержимого до края*/
+}
+
+/*Карта*/
+.contacts__map {
+  height: 450px; /*Высота карты*/
+  background: #fef0b4; /*Фон (наслучай если карта не прогрузится)*/
+}
+
+/*Заголовки (Адрес, Телефон, Соцсети)*/
+.contacts__title {
+  margin: 0 0 5px; /*Отступ от блока до блока*/
+  font-family: 'Montserrat', sans-serif; /*Шрифт*/
+  font-size: 18px; /*Размер шрифта*/
+  font-weight: 900; /*Ширина букв*/
+}
+
+.contacts__item {
+  margin-bottom: 35px; /*Отступ от блока до блока (Адрес, Телефон, Соцсети)*/
+}
+
+.contacts__item:last-of-type {
+  margin-bottom: 0;
+}
+
+/*Текст находящийся под заголовками*/
+.contacts__text {
+  margin: 0; /*Отступ от блока до блока*/
+  font-size: 18px; /*Размер шрифта*/
+}
+
+/*Стиль для телефона*/
+.contacts__phone {
+  color: inherit; /*Наследуем цвет у родителя*/
+  text-decoration: none; /*Убираем подчеркивание*/
+  transition: color 0.2s; /*Плавный переход (когда отводим курсор)*/
+}
+
+/*Наведение на телефон*/
+.contacts__phone:hover {
+  color: #ff0026; /*Меняем цвет*/
+}
+
+@media (max-width: 1800px) {
+  .section-contacts__container::before {
+    right: -40px; /*Изменяем отступ справа у картинки*/
+  }
+}
+
+@media (max-width: 1400px) {
+  .section-contacts__container::before {
+    right: 10px; /*Изменяем отступ справа у картинки*/
+  }
+}
+
+@media (max-width: 1300px) {
+  .section-contacts__container::before {
+    right: 40px; /*Изменяем отступ справа у картинки*/
+  }
+}
+
+@media (max-width: 1200px) {
+  .section-contacts__container::before {
+    content: none; /*Убираем картинку*/
+  }
+}
+
+@media (max-width: 992px) {
+  .contacts__map {
+    height: 350px; /*Изменяем высоту карты*/
+  }
+}
+
+@media (max-width: 767px) {
+  .section-contacts {
+    padding-bottom: 0; /*Изменяем отступы*/
+  }
+
+  .contacts__start {
+    width: 100%; /*Делаем область в которой находится карта на весь экран*/
+    order: 1;
+  }
+
+  .contacts__end {
+    margin-bottom: 40px;
+    padding-left: 0;
+    width: 400px;
+    max-width: 100%;
+  }
+
+  .contacts__map {
+    margin: 0 -20px;
+    height: 300px;
+  }
+}

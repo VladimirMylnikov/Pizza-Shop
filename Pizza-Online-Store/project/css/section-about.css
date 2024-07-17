@@ -1,0 +1,65 @@
+.section-about {
+  background: linear-gradient(to top, rgba(7, 52, 82, 1), rgb(7, 43, 66)); /*Фон градиент*/
+  color: white; /*Цвет текста*/
+  position: relative; /*Чтобы из-е на улетало */
+}
+
+.section-about__img {
+  position: absolute; /*Чтобы текст не перекрывал изображение*/
+  top: 0; /*Отступ сверху*/
+  left: 0; /*Отступ слева*/
+  width: 50%; /*Ширина 50% (экрана)*/
+  height: 100%; /*Высота*/
+  object-fit: cover;
+}
+
+.section-about__container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /*Прижимет область с текстом к правой части*/
+  width: 1400px; /*Ширина контейнера (Области и изображением и тестом)*/
+}
+
+.section-about__content {
+  width: 50%; /*Текст занимает 50% экрана*/
+  padding-left: 80px; /*Отступ слева*/
+}
+
+.section-about__title {
+  text-align: left; /*Прижимает заголовок к левой части*/
+  margin-bottom: 20px; /*Отступ от нижнего блока*/
+}
+
+.section-about__text {
+  font-size: 18px; /*Размер текста*/
+  line-height: 1.67; /*межстрочный интервал*/
+  margin: 0;
+}
+
+/*Медиа запрос для ширины экрана 1200x*/
+@media (max-width: 1200px) {
+  .section-about {
+    padding-top: 80px; /*Изменяем отступ*/
+    padding-bottom: 80px; /*Изменяем отступ*/
+  }
+
+  .section-about__content {
+    padding-left: 50px; /*Изменяем отступ у контента*/
+  }
+}
+
+/*Медиа запрос для ширины экрана 767px*/
+@media (max-width: 767px) {
+  .section-about__img {
+    width: 100%; /*Изменяем размер изображение (изображение занимает 100% экрана)*/
+  }
+  .section-about__container {
+    justify-content: center; /*Выраниваем контент по центру*/
+  }
+
+  .section-about__content {
+    padding-left: 0; /*Убираем отступ (для меньших разрешений)*/
+    width: 500px; /*Увеличиваем ширину контента*/
+    max-width: 100%; /*Максимальная высота*/
+  }
+}
